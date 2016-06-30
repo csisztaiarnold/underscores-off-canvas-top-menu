@@ -29,7 +29,7 @@ Simply create a new stylesheet in the theme's folder and override the plugin's d
 
 **The plugin isn't working. Why?**
 
-Make sure that you don't edit the HTML markup inside the **<header>** tag (unless you know what are you doing). Also the **<header>**'s ID must remain **#masthead**.
+Make sure that you don't edit the HTML markup inside the **header** tag (unless you know what are you doing). Also the **header**'s ID must remain **#masthead**.
 
 ## Changelog
 
