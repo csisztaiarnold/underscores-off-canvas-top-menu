@@ -1,0 +1,95 @@
+/* NOTE: Underscores' mobile menu triggers below 600px! */
+/* Variables */
+.container.masthead-container {
+  /* 
+  The mastead will probably be full width, so remove the unnecessary padding from the container
+  */ }
+  @media screen and (max-width: 599px) {
+    .container.masthead-container {
+      padding: 0;
+      margin: 0;
+      top: 0;
+      position: fixed;
+      width: 100%;
+      z-index: 900000; } }
+  .container.masthead-container #masthead {
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    /* We don't usually use the site description */
+    /* Menu usually aligned to right of the screen */
+    /* Reset the menu toggle button's look */ }
+    @media screen and (max-width: 599px) {
+      .container.masthead-container #masthead {
+        background-color: #333; } }
+    .container.masthead-container #masthead .site-branding {
+      float: left;
+      /* The logo. Most likely an image will used be here */ }
+      .container.masthead-container #masthead .site-branding h1, .container.masthead-container #masthead .site-branding p {
+        margin: 0;
+        font-size: 24px;
+        line-height: 24px;
+        padding: 5px; }
+        .container.masthead-container #masthead .site-branding h1 a, .container.masthead-container #masthead .site-branding p a {
+          color: #AAA;
+          text-decoration: none; }
+    .container.masthead-container #masthead .site-description {
+      display: none; }
+    .container.masthead-container #masthead .main-navigation {
+      clear: none;
+      float: right;
+      width: auto; }
+    .container.masthead-container #masthead .menu-toggle {
+      float: right;
+      border: 0;
+      background: none;
+      box-shadow: none;
+      border-radius: 0;
+      text-shadow: none;
+      padding: 0;
+      margin: 5px;
+      color: #AAA;
+      font-size: 24px;
+      line-height: 24px;
+      outline: none;
+      transition: color .25s ease-in-out;
+      -moz-transition: color .25s ease-in-out;
+      -webkit-transition: color .25s ease-in-out; }
+    .container.masthead-container #masthead .menu-toggle.active {
+      color: #FFF; }
+    .container.masthead-container #masthead #site-navigation {
+      /* 
+      Hiding the scrollbar on Chrome
+      TODO: Firefox, IE & Co.
+      */ }
+      .container.masthead-container #masthead #site-navigation ul {
+        /* 
+        Primary menu look on mobile 
+        The top position is automatically calculated in the bs-masthead.js file (depending on the .masthead-container's outerHeight)
+        Background color is most likely the same as the masthead's background
+        Put bottom:0 if you want to fill the whole screen with the menu
+        */ }
+        @media screen and (max-width: 599px) {
+          .container.masthead-container #masthead #site-navigation ul {
+            position: fixed;
+            left: 0;
+            background-color: #333;
+            width: 100%;
+            top: 0;
+            position: fixed;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            display: none; } }
+        @media screen and (max-width: 599px) {
+          .container.masthead-container #masthead #site-navigation ul li {
+            clear: both;
+            width: 100%;
+            text-align: center; } }
+        @media screen and (max-width: 599px) {
+          .container.masthead-container #masthead #site-navigation ul li a {
+            color: #FFF;
+            padding: 10px; } }
+      .container.masthead-container #masthead #site-navigation ul::-webkit-scrollbar {
+        display: none; }
+
+/*# sourceMappingURL=underscores-off-canvas-top-menu-public.css.map */

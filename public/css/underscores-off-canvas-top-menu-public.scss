@@ -1,0 +1,146 @@
+/* NOTE: Underscores' mobile menu triggers below 600px! */
+
+/* Variables */
+
+$masthead-bg-color-mobile: #333;
+$menu-toggle-font-color: #AAA;
+$menu-toggle-font-color-active-state: #FFF;
+$menu-toggle-font-size: 24px;
+$menu-toggle-margin:5px;
+$menu-link-color:#FFF;
+$menu-link-padding:10px;
+
+.container.masthead-container {
+
+    /* 
+    The mastead will probably be full width, so remove the unnecessary padding from the container
+    */
+    @media screen and (max-width:599px) {
+        padding:0;
+        margin:0;
+        top:0;
+        position:fixed;
+        width:100%;
+        z-index:900000;
+    }
+ 
+    #masthead {
+        font-size:13px;
+        padding:0;
+        margin:0;
+        
+        @media screen and (max-width:599px) {
+            background-color:$masthead-bg-color-mobile;
+        }
+        
+        .site-branding {
+            float:left;
+            
+            /* The logo. Most likely an image will used be here */
+            h1, p {
+                margin:0;
+                font-size:24px;
+                line-height:24px;
+                padding:5px;
+                
+                a {
+                    color:#AAA;
+                    text-decoration:none;
+                }
+                
+            }
+        
+        }
+        
+        /* We don't usually use the site description */
+        .site-description {
+            display:none;
+        }
+        
+        /* Menu usually aligned to right of the screen */
+        .main-navigation {
+            clear:none;
+            float:right;
+            width:auto;
+        }
+        
+        /* Reset the menu toggle button's look */
+        .menu-toggle {
+            float:right;
+            border:0;
+            background:none;
+            box-shadow:none;
+            border-radius:0;
+            text-shadow:none;
+            padding:0;
+            margin:$menu-toggle-margin;
+            color:$menu-toggle-font-color;
+            font-size:$menu-toggle-font-size;
+            line-height:$menu-toggle-font-size;
+            outline:none;
+            transition:color .25s ease-in-out;
+            -moz-transition:color .25s ease-in-out;
+            -webkit-transition:color .25s ease-in-out;
+                                
+        }
+        
+        .menu-toggle.active {
+            color:$menu-toggle-font-color-active-state;
+        }
+        
+        #site-navigation {
+            
+            ul {
+                
+                /* 
+                Primary menu look on mobile 
+                The top position is automatically calculated in the bs-masthead.js file (depending on the .masthead-container's outerHeight)
+                Background color is most likely the same as the masthead's background
+                Put bottom:0 if you want to fill the whole screen with the menu
+                */
+                @media screen and (max-width:599px) {
+                    position:fixed;
+                    left:0;
+                    background-color:$masthead-bg-color-mobile;
+                    width:100%;
+                    top: 0;
+                    position:fixed;
+                    overflow-y:scroll;
+                    overflow-x:hidden;
+                    display:none;
+                }
+                
+                li {
+                    
+                    @media screen and (max-width:599px) {
+                        clear:both;
+                        width:100%;
+                        text-align:center;
+                    }
+                    
+                    a {
+                    
+                        @media screen and (max-width:599px) {
+                            color:$menu-link-color;
+                            padding:$menu-link-padding;
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+            /* 
+            Hiding the scrollbar on Chrome
+            TODO: Firefox, IE & Co.
+            */
+            ul::-webkit-scrollbar { 
+                display: none; 
+            }
+        
+        }
+
+    }
+
+}
