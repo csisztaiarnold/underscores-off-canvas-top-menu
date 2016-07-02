@@ -61,6 +61,53 @@ add_action( 'wp_enqueue_scripts', 'enqueue_bootstrap' );
 // Hide admin bar
 add_filter('show_admin_bar', '__return_false');
 
+function add_additional_styles_to_view() {
+    
+    $options = get_option('underscores-off-canvas-top-menu');
+    echo '<style>
+    @media screen and (max-width: 599px) {';
+    
+    if(!empty($options['background_color'])) echo ' .container.masthead-container #masthead, .container.masthead-container #masthead #site-navigation ul { background-color: '.$options['background_color'].' } ';
+    
+    if(!empty($options['fullscreen'])) echo '.container.masthead-container #masthead #site-navigation ul { bottom:0; } ';
+    
+    if(!empty($options['font_color'])) echo '.container.masthead-container #masthead .site-branding h1 a, .container.masthead-container #masthead .site-branding p a, .glyphicon, .container.masthead-container #masthead #site-navigation ul li a { color: '.$options['font_color'].' } ';
+    
+    if(!empty($options['font_size'])) echo '.container.masthead-container #masthead #site-navigation ul li a { font-size: '.$options['font_size'].' } ';
+    
+    if(!empty($options['menu_item_padding'])) echo '.container.masthead-container #masthead #site-navigation ul li a { padding: '.$options['menu_item_padding'].' } ';
+
+    if(!empty($options['title_font_size'])) echo 'h1.site-title, span.glyphicon { font-size: '.$options['title_font_size'].' !important; line-height: '.$options['title_font_size'].' !important;  } ';
+    
+    if(!empty($options['title_font_color'])) echo 'h1.site-title a, span.glyphicon { color: '.$options['title_font_color'].' !important; } ';
+    
+    if(!empty($options['title_padding'])) echo 'h1.site-title, .glyphicon { padding: '.$options['title_padding'].' !important;}';
+    
+    if(!empty($options['container_padding'])) echo '.container.masthead-container #masthead #site-navigation ul  { padding: '.$options['container_padding'].' !important;}';
+    
+    echo '}
+    </style>';
+    
+    echo 
+'<script>
+(function($) {
+    
+    $(document).ready(function() {
+    ';
+    
+    if(!empty($options['click_on_html_close'])) echo ' $(\'html\').on(\'touchstart click scroll\', function(e){ $(\'#primary-menu\').slideUp();  }); $(\'.masthead-container\').click(function(event){ event.stopPropagation(); });';
+
+    echo '
+    });
+    
+})( jQuery );
+
+</script>';
+}
+
+
+add_action('wp_head', 'add_additional_styles_to_view');
+
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.

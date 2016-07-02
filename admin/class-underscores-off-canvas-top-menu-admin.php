@@ -99,5 +99,69 @@ class Underscores_Off_Canvas_Top_Menu_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/underscores-off-canvas-top-menu-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
+    
+    public function add_plugin_admin_menu() {
 
+        /*
+         * Add a settings page for this plugin to the Settings menu.
+         *
+         * NOTE:  Alternative menu locations are available via WordPress administration menu functions.
+         *
+         *        Administration Menus: http://codex.wordpress.org/Administration_Menus
+         *
+         */
+        add_options_page( 'Underscores Off-Canvas Top Menu', 'Underscores Off-Canvas', 'manage_options', $this->plugin_name, array($this, 'display_plugin_setup_page')
+        );
+    }
+    
+     /**
+     * Add settings action link to the plugins page.
+     *
+     * @since    1.0.0
+     */
+     
+    public function add_action_links( $links ) {
+        /*
+        *  Documentation : https://codex.wordpress.org/Plugin_API/Filter_Reference/plugin_action_links_(plugin_file_name)
+        */
+       $settings_link = array(
+        '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_name ) . '">' . __('Settings', $this->plugin_name) . '</a>',
+       );
+       return array_merge(  $settings_link, $links );
+
+    }
+
+    /**
+     * Render the settings page for this plugin.
+     *
+     * @since    1.0.0
+     */
+     
+    public function display_plugin_setup_page() {
+        include_once( 'partials/underscores-off-canvas-top-menu-admin-display.php' );
+    }    
+    
+    public function validate($input) {
+     
+        $valid = array();
+
+        // Cleanup
+        $valid['fullscreen'] = (isset($input['fullscreen']) && !empty($input['fullscreen'])) ? 1 : 0;
+        $valid['title_font_size'] = sanitize_text_field($input['title_font_size']);
+        $valid['title_font_color'] = sanitize_text_field($input['title_font_color']);
+        $valid['title_padding'] = sanitize_text_field($input['title_padding']);          
+        $valid['font_size'] = sanitize_text_field($input['font_size']);
+        $valid['font_color'] = sanitize_text_field($input['font_color']);
+        $valid['background_color'] = sanitize_text_field($input['background_color']);
+        $valid['menu_item_padding'] = sanitize_text_field($input['menu_item_padding']);
+        $valid['container_padding'] = sanitize_text_field($input['container_padding']);
+        $valid['click_on_html_close'] = (isset($input['click_on_html_close']) && !empty($input['click_on_html_close'])) ? 1 : 0;
+        
+        return $valid;
+        
+    }
+    
+    public function options_update() {
+        register_setting($this->plugin_name, $this->plugin_name, array($this, 'validate'));
+    }
 }

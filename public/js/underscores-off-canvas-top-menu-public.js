@@ -29,7 +29,6 @@
             else
             {
                 $('#primary-menu').show();
-                console.log('Above Underscore\'s mobile size');
             }
             
         });
@@ -50,7 +49,7 @@
             }
             
         });
-        
+
     });
     
 })( jQuery );

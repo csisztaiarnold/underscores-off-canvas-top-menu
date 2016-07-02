@@ -9,13 +9,14 @@ $menu-toggle-font-size: 24px;
 $menu-toggle-margin:5px;
 $menu-link-color:#FFF;
 $menu-link-padding:10px;
+$mobile-menu-trigger-at:599px;
 
 .container.masthead-container {
 
     /* 
     The mastead will probably be full width, so remove the unnecessary padding from the container
     */
-    @media screen and (max-width:599px) {
+    @media screen and (max-width:$mobile-menu-trigger-at) {
         padding:0;
         margin:0;
         top:0;
@@ -29,7 +30,7 @@ $menu-link-padding:10px;
         padding:0;
         margin:0;
         
-        @media screen and (max-width:599px) {
+        @media screen and (max-width:$mobile-menu-trigger-at) {
             background-color:$masthead-bg-color-mobile;
         }
         
@@ -98,7 +99,7 @@ $menu-link-padding:10px;
                 Background color is most likely the same as the masthead's background
                 Put bottom:0 if you want to fill the whole screen with the menu
                 */
-                @media screen and (max-width:599px) {
+                @media screen and (max-width:$mobile-menu-trigger-at) {
                     position:fixed;
                     left:0;
                     background-color:$masthead-bg-color-mobile;
@@ -112,7 +113,7 @@ $menu-link-padding:10px;
                 
                 li {
                     
-                    @media screen and (max-width:599px) {
+                    @media screen and (max-width:$mobile-menu-trigger-at) {
                         clear:both;
                         width:100%;
                         text-align:center;
@@ -120,7 +121,7 @@ $menu-link-padding:10px;
                     
                     a {
                     
-                        @media screen and (max-width:599px) {
+                        @media screen and (max-width:$mobile-menu-trigger-at) {
                             color:$menu-link-color;
                             padding:$menu-link-padding;
                         }
