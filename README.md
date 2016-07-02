@@ -26,7 +26,10 @@ Hidden with CSS. Feel free to put it back.
 **How do I edit the style of the menu?**
 
 Simply create a new stylesheet in the theme's folder and override the plugin's default styles. **DO NOT** edit the plugin files directly!
-There are also some basic styling and functionality options in the plugin's settings page.
+
+There are also some basic styling and functionality options in the plugin's settings page:
+
+![Plugin Settings](https://www.idevele.com/underscores-off-canvas-top-menu/options.png)
 
 **The plugin isn't working. Why?**
 
@@ -50,5 +53,5 @@ None so far.
 
 ## Thanks To
 
-**József Mikus** for the straightforward **overflow-y:scroll** hack in case the menu's vertical size exceeds the screen's size.
-**Ćuković Miloš** for testing and ideas.
+- **József Mikus** for the straightforward **overflow-y:scroll** hack in case the menu's vertical size exceeds the screen's size.
+- **Ćuković Miloš** for testing and ideas.
