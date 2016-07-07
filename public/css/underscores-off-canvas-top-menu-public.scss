@@ -11,6 +11,20 @@ $menu-link-color:#FFF;
 $menu-link-padding:10px;
 $mobile-menu-trigger-at:599px;
 
+/* 
+Mobile indicator is used so we don't have to check screen width with jQuery
+If this item is visible, we could assume we're at mobile size
+*/
+#mobile-indicator {
+    display: none;
+}
+
+@media (max-width:$mobile-menu-trigger-at) {
+    #mobile-indicator {
+        display: block;
+    }
+}
+
 .container.masthead-container {
 
     /* 

@@ -2,9 +2,14 @@
     
     $(document).ready(function() {
         
+        function isMobileWidth() {
+            return $('#mobile-indicator').is(':visible');
+        }
+
 		// Wrap the header with the .container.masthead-container classes
 		$('#masthead').wrap('<div class="container masthead-container"></div>');
-		
+		$('.masthead-container').prepend('<div id="mobile-indicator"></div>');
+        
         // Remove text from the menu toggle button and replace it with a glyphicon
         $('.menu-toggle').empty();
         $('.menu-toggle').html('<span class="glyphicon glyphicon-menu-hamburger"></span>');
@@ -22,7 +27,7 @@
         
         $(window).resize(function() {
 
-            if($(window).width() < 600)
+            if(isMobileWidth())
             {
                 initAndResize();
             }
