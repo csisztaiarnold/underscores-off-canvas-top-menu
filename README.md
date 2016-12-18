@@ -4,7 +4,7 @@ Wraps Underscores WordPress starter theme's header and injects a barebone off-ca
 
 Tested on Chrome, Firefox, Safari, Opera, IE11+
 
-[Demo](https://projects.idevele.com/underscores-off-canvas-top-menu/)
+[Demo](http://projects.idevele.com/underscores-off-canvas-top-menu/)
 
 # Installation
 
@@ -29,7 +29,7 @@ Simply create a new stylesheet in the theme's folder and override the plugin's d
 
 There are also some basic styling and functionality options in the plugin's settings page:
 
-![Plugin Settings](https://projects.idevele.com/underscores-off-canvas-top-menu/options.png)
+![Plugin Settings](http://projects.idevele.com/underscores-off-canvas-top-menu/options.png)
 
 **The plugin isn't working. Why?**
 
