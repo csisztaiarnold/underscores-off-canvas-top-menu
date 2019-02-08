@@ -4,8 +4,6 @@ Wraps Underscores WordPress starter theme's header and injects a barebone off-ca
 
 Tested on Chrome, Firefox, Safari, Opera, IE11+
 
-[Demo](http://projects.idevele.com/underscores-off-canvas-top-menu/)
-
 # Installation
 
 1. Requires a [default Underscores theme](http://underscores.me/). Copy the theme into WordPress' themes folder and enable it in the admin area.
